@@ -11,7 +11,7 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    session[:foo] = "hello"
+    
     "Welcome to Sinatra Sessions! In this lab, we will be learning about the general principles behind a sessions cookie. In order to proceed, let's go to the '/first_exercise' path."
   end
 
@@ -21,6 +21,7 @@ class App < Sinatra::Base
   end
 
   get '/set' do
+    session[:foo] = "hello"
     # set the :foo key of the session hash equal to 'hello' here!
     if session[:foo] == 'hello'
       redirect '/fetch'
